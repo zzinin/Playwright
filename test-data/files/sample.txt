@@ -1,0 +1,7 @@
+This is a sample text file for Playwright upload testing.
+It contains multiple lines of text to demonstrate file upload functionality.
+
+Line 1: Hello World
+Line 2: Playwright Testing
+Line 3: File Upload Demo
+Line 4: End of file
