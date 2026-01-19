@@ -24,25 +24,44 @@ export default defineConfig({
     ['junit', { outputFile: 'test-results/results.xml' }]
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
-  use: {
-    /* Base URL to use in actions like `await page.goto('/')`. */
-    baseURL: process.env.BASE_URL || 'http://localhost:3000',
+use: {
+  /* Base URL to use in actions like `await page.goto('/')`. */
+  baseURL: process.env.BASE_URL || 'http://localhost:3000',
 
-    /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'on-first-retry',
-    
-    /* Take screenshot on failure */
-    screenshot: 'only-on-failure',
-    
-    /* Record video on failure */
-    video: 'retain-on-failure',
-    
-    /* Global timeout for each action */
-    actionTimeout: 10000,
-    
-    /* Global timeout for navigation */
-    navigationTimeout: 30000,
-  },
+   /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
+  trace: 'on-first-retry',
+  
+  /* Take screenshot on failure */
+  screenshot: 'only-on-failure',
+  
+  /* Record video on failure */
+  video: 'retain-on-failure',
+  
+  /* Global timeout for each action */
+  actionTimeout: 10000,
+  
+  /* Global timeout for navigation */
+  navigationTimeout: 30000,
+  
+  /* Launch options for browsers */
+  launchOptions: {
+    args: [
+      '--disable-features=Signin',
+      '--disable-features=IdentityConsistency',
+      '--disable-features=EnableChromeSignin',
+      '--disable-sync',
+      '--disable-save-password-bubble'
+    ]
+  }
+},
+
+
+
+
+
+
+
+
 
   /* Configure projects for major browsers */
   projects: [
